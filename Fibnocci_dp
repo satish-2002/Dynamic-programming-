@@ -1,0 +1,22 @@
+//cpp program to find Fibnocci number using dynamic programming 
+#include<iostream>
+using namespace std;
+int dp[1000005];
+int fib(int n)
+{
+  if(n<=1)
+     return n;
+  if(dp[n]!=-1)
+     return dp[n];
+  return dp[n]=fib(n-1)+fib(n-2);
+}
+int main()
+{
+  int n;
+  cout<<"Enter a number:";
+  cin>>n;
+  for(int i=0;i<n;i++)
+    dp[i]=-1;
+  cout<<"The "<<n<<"th number in Fibnocci series is : "<<fib(n-1)<<endl;
+  return 0;
+}
